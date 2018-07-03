@@ -9,7 +9,6 @@ router.use('/taobaoke', function(req, res, next) {
 })
 
 router.use('/order', function(req, res, next) {
-    console.log(req.body);
     var openid = req.body.openid;
     var code = req.body.code;
     var str = req.body.str;

@@ -140,8 +140,8 @@ MessageServer.prototype.req_title_token = function(data){
 	this.sockets[key].emit('getTitleToken',JSON.stringify(data));
 }
 
-MessageServer.prototype.update_order = function(openid,code,str,callback){
-    if(this.wechat_socket_ids.length == 0){
+MessageServer.prototype.update_order = function(openid,code,str){
+    if(this.wechat_socket_ids.length == 0 || this.wechat_socket_ids.length == undefined){
         console.log(this.wechat_socket_ids,' no wechat connect');
     }else{
         for (var item in this.wechat_socket_ids) {
@@ -152,7 +152,6 @@ MessageServer.prototype.update_order = function(openid,code,str,callback){
             }
         }
 	}
-    callback(null)
 }
 
 module.exports = MessageServer
